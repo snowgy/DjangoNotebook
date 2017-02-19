@@ -5,7 +5,7 @@
     Your Courses
   </a>
   {% for course in course_list %}
-        <a href="{% url 'course' %}" class="list-group-item">{{ course.title }}</a>
+        <a href="{% url 'course' course.id %}" class="list-group-item">{{ course.title }}</a>
   {% endfor %}
 </div>
 {% endblock %}

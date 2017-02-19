@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
     url(r'^homework$', views.homework, name='homework'),
-    url(r'^course$', views.course_detail, name='course'),
+    url(r'^course/(?P<course_id>\d+)/$', views.course_detail, name='course'),
 ]
