@@ -1,0 +1,107 @@
+{% extends 'course.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="templatemo-content col-1 light-gray-bg">
+
+          <div class="templatemo-content-container">
+              <div class="templatemo-flex-row flex-content-row">
+            <div class="templatemo-content-widget white-bg col-2">
+              <div class="square"></div>
+              <h2 class="templatemo-inline-block">{{ course.title }}</h2><hr>
+              <p>Welcome to notebook for sustecher.Here you can put all your imformation about course orderly.
+              Just spend some time using this notebook, sorting out your course information, making your
+              study plan,and recording your questions.</p>
+              <p>Hope all of you enjoy this notebook</p>
+            </div>
+            <div class="templatemo-content-widget white-bg col-1 text-center">
+
+              <h2 class="text-uppercase">Time&Room</h2>
+              <h3 class="text-uppercase margin-bottom-10"></h3>
+                <p>{{ course.place_time }}</p>
+                <img src="{% static 'seeu/images/bicycle.jpg' %}" alt="Bicycle" class="img-circle img-thumbnail">
+            </div>
+            <div class="templatemo-content-widget white-bg col-1">
+
+              <h2 class="text-uppercase">Dictum</h2>
+              <h3 class="text-uppercase">Sedvel Erat Non</h3><hr>
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="templatemo-flex-row flex-content-row">
+            <div class="col-1">
+              <div class="templatemo-content-widget orange-bg">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object img-circle" src="{% static 'seeu/images/sunset.jpg' %}" alt="Sunset">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h2 class="media-heading text-uppercase">Teacher Information</h2>
+                      {% for teacher in course.teacher.all %}
+                       <p>{{ teacher.name }}</p>
+                          <p>{{ teacher.contact_information }}</p>
+                          <p>{{ teacher.reservation }}</p>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+              <div class="templatemo-content-widget white-bg">
+
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object img-circle" src="{% static 'seeu/images/sunset.jpg' %}" alt="Sunset">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h2 class="media-heading text-uppercase">TA Information</h2>
+                    {% for ta in course.ta.all %}
+                       <p>{{ ta.name }}</p>
+                          <p>{{ ta.contact_information }}</p>
+                          <p>{{ ta.reservation }}</p>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1">
+              <div class="panel panel-default margin-10">
+                <div class="panel-heading"><h2 class="text-uppercase">Question</h2></div>
+                  <div class="panel-body">
+                      <p>Here are your questions.</p>
+                      <p>Remember to solve these problems in time</p>
+                  </div>
+
+              </div>
+              </div>
+            </div>
+          </div> <!-- Second row ends -->
+          <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">手机网站模板</a></div>
+          <div class="templatemo-flex-row flex-content-row templatemo-overflow-hidden"> <!-- overflow hidden for iPad mini landscape view-->
+            <div class="col-1 templatemo-overflow-hidden">
+              <div class="templatemo-content-widget white-bg templatemo-overflow-hidden" style="display: none;">
+                <i class="fa fa-times"></i>
+                <div class="templatemo-flex-row flex-content-row">
+                  <div class="col-1 col-lg-6 col-md-12">
+                    <h2 class="text-center">Modular<span class="badge">new</span></h2>
+                    <div id="pie_chart_div" class="templatemo-chart"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 400px; height: 200px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="400" height="200" aria-label="A chart." style="overflow: hidden;"><defs id="defs"></defs><rect x="0" y="0" width="400" height="200" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="67" y="22.85" font-family="Arial" font-size="11" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">How Much Pizza I Ate Last Night</text><rect x="67" y="13.5" width="267" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><rect x="250" y="38" width="84" height="83" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="250" y="38" width="84" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="265" y="47.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Mushrooms</text></g><circle cx="255.5" cy="43.5" r="5.5" stroke="none" stroke-width="0" fill="#3366cc"></circle></g><g><rect x="250" y="56" width="84" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="265" y="65.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Onions</text></g><circle cx="255.5" cy="61.5" r="5.5" stroke="none" stroke-width="0" fill="#dc3912"></circle></g><g><rect x="250" y="74" width="84" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="265" y="83.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Olives</text></g><circle cx="255.5" cy="79.5" r="5.5" stroke="none" stroke-width="0" fill="#ff9900"></circle></g><g><rect x="250" y="92" width="84" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="265" y="101.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Zucchini</text></g><circle cx="255.5" cy="97.5" r="5.5" stroke="none" stroke-width="0" fill="#109618"></circle></g><g><rect x="250" y="110" width="84" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="265" y="119.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Pepperoni</text></g><circle cx="255.5" cy="115.5" r="5.5" stroke="none" stroke-width="0" fill="#990099"></circle></g></g><g><path d="M150,100L150,38A62,62,0,0,1,193.84062043356596,143.84062043356596L150,100A0,0,0,0,0,150,100" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="194.93886097285701" y="85.23571430744363" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">37.5%</text></g><g><path d="M150,100L88,100.00000000000001A62,62,0,0,1,150,38L150,100A0,0,0,0,0,150,100" stroke="#ffffff" stroke-width="1" fill="#990099"></path><text text-anchor="start" x="116.79255987976897" y="70.64255987976898" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">25%</text></g><g><path d="M150,100L106.15937956643405,143.84062043356596A62,62,0,0,1,88,100.00000000000001L150,100A0,0,0,0,0,150,100" stroke="#ffffff" stroke-width="1" fill="#109618"></path><text text-anchor="start" x="105.061139027143" y="122.46428569255637" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">12.5%</text></g><g><path d="M150,100L150,162A62,62,0,0,1,106.15937956643405,143.84062043356596L150,100A0,0,0,0,0,150,100" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path><text text-anchor="start" x="132.44431618465782" y="146.23316996373288" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">12.5%</text></g><g><path d="M150,100L193.84062043356596,143.84062043356596A62,62,0,0,1,150,162L150,100A0,0,0,0,0,150,100" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path><text text-anchor="start" x="167.5556838153422" y="146.23316996373288" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">12.5%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Topping</th><th>Slices</th></tr></thead><tbody><tr><td>Mushrooms</td><td>3</td></tr><tr><td>Onions</td><td>1</td></tr><tr><td>Olives</td><td>1</td></tr><tr><td>Zucchini</td><td>1</td></tr><tr><td>Pepperoni</td><td>2</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 210px; left: 410px; white-space: nowrap; font-family: Arial; font-size: 11px;">Pepperoni</div><div></div></div></div> <!-- Pie chart div -->
+                  </div>
+                  <div class="col-1 col-lg-6 col-md-12">
+                    <h2 class="text-center">Interactive<span class="badge">new</span></h2>
+                    <div id="bar_chart_div" class="templatemo-chart"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 400px; height: 200px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="400" height="200" aria-label="A chart." style="overflow: hidden;"><defs id="defs"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="67" y="38" width="267" height="124"></rect></clipPath></defs><rect x="0" y="0" width="400" height="200" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="67" y="22.85" font-family="Arial" font-size="11" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">How Much Pizza I Ate Last Night</text><rect x="67" y="13.5" width="267" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><rect x="345" y="38" width="44" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="345" y="38" width="44" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="371" y="47.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Slices</text></g><rect x="345" y="38" width="22" height="11" stroke="none" stroke-width="0" fill="#3366cc"></rect></g></g><g><rect x="67" y="38" width="267" height="124" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(file:///F:/mapHTML/index.html#_ABSTRACT_RENDERER_ID_1)"><g><rect x="67" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="134" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="200" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="267" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="333" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect></g><g><rect x="68" y="43" width="199" height="15" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="68" y="68" width="66" height="15" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="68" y="92" width="66" height="16" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="68" y="117" width="66" height="15" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="68" y="142" width="132" height="15" stroke="none" stroke-width="0" fill="#3366cc"></rect></g><g><rect x="67" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="67.5" y="178.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="middle" x="134" y="178.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#444444">1</text></g><g><text text-anchor="middle" x="200.5" y="178.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#444444">2</text></g><g><text text-anchor="middle" x="267" y="178.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#444444">3</text></g><g><text text-anchor="middle" x="333.5" y="178.35" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#444444">4</text></g><g><text text-anchor="end" x="56" y="54.65" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Mushrooms</text></g><g><text text-anchor="end" x="56" y="79.25" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Onions</text></g><g><text text-anchor="end" x="56" y="103.85" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Olives</text></g><g><text text-anchor="end" x="56" y="128.45000000000002" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Zucchini</text></g><g><text text-anchor="end" x="56" y="153.04999999999998" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#222222">Pepperoni</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Topping</th><th>Slices</th></tr></thead><tbody><tr><td>Mushrooms</td><td>3</td></tr><tr><td>Onions</td><td>1</td></tr><tr><td>Olives</td><td>1</td></tr><tr><td>Zucchini</td><td>1</td></tr><tr><td>Pepperoni</td><td>2</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 210px; left: 410px; white-space: nowrap; font-family: Arial; font-size: 11px;">Slices</div><div></div></div></div> <!-- Bar chart div -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

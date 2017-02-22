@@ -47,25 +47,31 @@ class Pro(models.Model):
 
 class Teacher(models.Model):
     name = models.CharField(max_length=50)
-    contact_information = models.TextField(blank=True, null=True)
-    address = models.CharField(max_length=20)
-    reservation = models.DateTimeField(auto_now=False, auto_now_add=False)
+    contact_information = models.TextField(blank=True,null=True)
+    address = models.CharField(max_length=20, blank=True, null=True)
+    reservation = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class TA(models.Model):
     name = models.CharField(max_length=50)
     contact_information = models.TextField(blank=True, null=True)
-    address = models.CharField(max_length=20)
-    reservation = models.DateTimeField(auto_now=False, auto_now_add=False)
+    address = models.CharField(max_length=20, null=True, blank=True)
+    reservation = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Course(models.Model):
-    title = models.CharField(max_length=50, null=True)
+    title = models.CharField(max_length=50)
     place_time = models.TextField(null=True, blank=True)
     tutorial_place_time = models.TextField(null=True, blank=True)
     homework = models.ManyToManyField(Homework)
-    pre = models.ManyToManyField(Pre)
-    pro = models.ManyToManyField(Pro)
+    pre = models.ManyToManyField(Pre, blank=True)
+    pro = models.ManyToManyField(Pro, blank=True)
     teacher = models.ManyToManyField(Teacher)
     ta = models.ManyToManyField(TA)
 

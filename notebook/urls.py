@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^homework$', views.homework, name='homework'),
     url(r'^course/(?P<course_id>\d+)/$', views.course_detail, name='course'),
+    url(r'^time/(?P<my_course_id>\d+)/$', views.time_place_detail, name='time'),
+
 ]
