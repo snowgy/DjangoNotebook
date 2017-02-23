@@ -1,0 +1,14 @@
+{% extends 'course.html' %}
+{% block content %}
+    <div class="templatemo-content-widget white-bg col-2">
+              <div class="square"></div>
+              <h2 class="templatemo-inline-block">{{ homework.title }}</h2><hr>
+
+              <p>Content:{{ homework.content }}</p>
+              <p>DDL:{{ homework.due_time }}</p>
+              <p>Plan:{{ homework.plan }}</p>
+              <p>Question:{{ homework.question }}</p>
+
+
+            </div>
+{% endblock %}

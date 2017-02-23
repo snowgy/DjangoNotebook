@@ -3,7 +3,7 @@
 {% block content %}
     <div class="templatemo-content-widget white-bg col-2">
               <div class="square"></div>
-              <h2 class="templatemo-inline-block">Your Homework</h2><hr>
+              <h2 class="templatemo-inline-block">PRE Information</h2><hr>
             {% for homework in course.homework.all %}
                 <div class="templatemo-content-widget white-bg">
 
@@ -14,10 +14,12 @@
                     </a>
                   </div>
                   <div class="media-body">
-                    <h2 class="media-heading text-uppercase">{{ homework.title }}</h2>
-                      <p>DDL:{{ homework.due_time }}</p>
-                      <a href="{% url 'detail' course.id homework.id %}" class="btn btn-info">More>>></a>
+                      {% for pro in course.pro.all %}
+                    <h2 class="media-heading text-uppercase">{{ pro.topic }}</h2>
+                      <p>PreTime:{{ pro.pre_time }}</p>
+                       <p>Plan:{{ pro.plan }}</p>
 
+                    {% endfor %}
                   </div>
                 </div>
               </div>

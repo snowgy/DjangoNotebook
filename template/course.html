@@ -51,9 +51,9 @@
           <ul>
             <li><a href="{% url 'home' %}" class="active"><i class="fa fa-home fa-fw"></i>Course</a></li>
               <li><a href="{% url 'time' course.id %}"><i class="fa fa-map-marker fa-fw"></i>Place&Time</a></li>
-            <li><a href="/"><i class="fa fa-bar-chart fa-fw"></i>About Teacher</a></li>
-            <li><a href="/"><i class="fa fa-database fa-fw"></i>About TA</a></li>
-              <li><a href="/"><i class="fa fa-users fa-fw"></i>PLAN</a></li>
+            <li><a href="{% url 'teacher' course.id %}"><i class="fa fa-bar-chart fa-fw"></i>About Teacher</a></li>
+            <li><a href="{% url 'ta' course.id %}"><i class="fa fa-database fa-fw"></i>About TA</a></li>
+              <li><a href="{% url 'plan' course.id %}"><i class="fa fa-users fa-fw"></i>PLAN</a></li>
             <li><a href="/"><i class="fa fa-sliders fa-fw"></i>BOOK</a></li>
             <li><a href="/"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
           </ul>
@@ -65,9 +65,9 @@
           <div class="row">
             <nav class="templatemo-top-nav col-lg-12 col-md-12">
               <ul class="text-uppercase">
-                <li><a href="" class="active">homework</a></li>
-                <li><a href="">PRE</a></li>
-                <li><a href="">PRO</a></li>
+                <li><a href="{% url 'homework' course.id %}" class="active">homework</a></li>
+                <li><a href="{% url 'pre' course.id %}">PRE</a></li>
+                <li><a href="{% url 'pro' course.id %}">PRO</a></li>
                 <li><a href="/">Sign in form</a></li>
               </ul>
             </nav>

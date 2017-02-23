@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'course.html' %}
+{% block content %}
+    <div class="templatemo-content-widget white-bg col-2">
+              <div class="square"></div>
+              <h2 class="templatemo-inline-block">Teacher Information</h2><hr>
+          {% for teacher in course.teacher.all %}
+              <p>{{ teacher.name}}</p>
+              <p>{{ teacher.contact_information }}</p>
+              <p>{{ teacher.address }}</p>
+              <p>{{ teacher.reservation }}</p>
+              
+              
+            {% endfor %}
+            </div>
+{% endblock %}

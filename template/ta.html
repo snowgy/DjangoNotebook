@@ -1,0 +1,15 @@
+{% extends 'course.html' %}
+{% block content %}
+    <div class="templatemo-content-widget white-bg col-2">
+              <div class="square"></div>
+              <h2 class="templatemo-inline-block">TA Information</h2><hr>
+          {% for ta in course.ta.all %}
+              <p>{{ ta.name}}</p>
+              <p>{{ ta.contact_information }}</p>
+              <p>{{ ta.address }}</p>
+              <p>{{ ta.reservation }}</p>
+
+
+            {% endfor %}
+            </div>
+{% endblock %}

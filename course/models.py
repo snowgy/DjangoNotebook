@@ -47,7 +47,7 @@ class Pro(models.Model):
 
 class Teacher(models.Model):
     name = models.CharField(max_length=50)
-    contact_information = models.TextField(blank=True,null=True)
+    contact_information = models.TextField(blank=True, null=True)
     address = models.CharField(max_length=20, blank=True, null=True)
     reservation = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
