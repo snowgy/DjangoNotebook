@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from course.models import Homework, Course
+from account.models import User
 
 from . import models
 # Create your views here.
