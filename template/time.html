@@ -5,5 +5,7 @@
               <h2 class="templatemo-inline-block">Time&Place</h2><hr>
               <p>{{ course.place_time }}</p>
               <p>{{ course.tutorial_place_time }}</p>
+            <a href="{% url 'time_edit' course.id %}" class="btn btn-info">Add More Information</a>
             </div>
+
 {% endblock %}

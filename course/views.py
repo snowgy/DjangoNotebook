@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from course.models import Homework, Course
+
+from . import models
 # Create your views here.
 
 
@@ -53,6 +55,37 @@ def pre(request, course_id):
 def pro(request, course_id):
     course = Course.objects.get(pk=course_id)
     return render(request, 'pro.html', {'course': course})
+
+
+def create_page(request):
+    return render(request, 'create_page.html')
+
+
+def create_action(request):
+    title = request.POST.get('title', 'TITLE')
+    models.Course.objects.create(title=title)
+    course_list = models.Course.objects.all()
+    return render(request, 'home.html', {'course_list': course_list})
+
+
+def edit_page(request, course_id):
+    course = Course.objects.get(pk=course_id)
+    return render(request, 'time_edit.html', {'course': course})
+
+
+def edit_time_action(request):
+    content = request.POST.get('content', 'CONTENT')
+    course_id = request.POST.get('course_id', '0')
+
+    course = models.Course.objects.get(pk=course_id)
+    course.place_time = content
+
+    course.save()
+    return render(request, 'time.html', {'course': course})
+
+
+
+
 
 
 

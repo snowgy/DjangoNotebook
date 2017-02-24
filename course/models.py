@@ -69,11 +69,12 @@ class Course(models.Model):
     title = models.CharField(max_length=50)
     place_time = models.TextField(null=True, blank=True)
     tutorial_place_time = models.TextField(null=True, blank=True)
-    homework = models.ManyToManyField(Homework)
+    homework = models.ManyToManyField(Homework, blank=True)
     pre = models.ManyToManyField(Pre, blank=True)
     pro = models.ManyToManyField(Pro, blank=True)
-    teacher = models.ManyToManyField(Teacher)
-    ta = models.ManyToManyField(TA)
+    teacher = models.ManyToManyField(Teacher, blank=True)
+    ta = models.ManyToManyField(TA, blank=True)
 
     def __str__(self):
         return self.title
+

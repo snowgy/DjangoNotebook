@@ -1,0 +1,20 @@
+{% extends 'course.html' %}
+{% block content %}
+    <div class="templatemo-content-widget white-bg col-2">
+        <div class="square"></div>
+        <h2 class="templatemo-inline-block">Time&Place</h2><hr>
+        <form action="{% url 'edit_time_action' %}" method="post">
+        {% csrf_token %}
+
+        <input type="hidden" name="article_id" value="{{ course.id | default:'0' }}"/>
+
+        <label>
+            <textarea class="form-control" rows="5" name="content" >{{ course.place_time }}</textarea>
+        </label>
+        <br/>
+    <input class="btn btn-info" type="submit" value="submit">
+
+    </form>
+    </div>
+
+{% endblock %}

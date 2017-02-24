@@ -4,11 +4,18 @@
               <div class="square"></div>
               <h2 class="templatemo-inline-block">Teacher Information</h2><hr>
           {% for teacher in course.teacher.all %}
-              <p>{{ teacher.name}}</p>
-              <p>{{ teacher.contact_information }}</p>
-              <p>{{ teacher.address }}</p>
-              <p>{{ teacher.reservation }}</p>
-              
+              <p>Name:{{ teacher.name}}</p>
+
+
+              <p>Contact:{{ teacher.contact_information }}</p>
+
+
+              <p>Address:{{ teacher.address }}</p>
+
+
+                 {% if teacher.reservation != none %}
+              <p>Reservation:{{ teacher.reservation }}</p>
+                {% endif %}
               
             {% endfor %}
             </div>

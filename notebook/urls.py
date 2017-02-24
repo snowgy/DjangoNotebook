@@ -30,5 +30,9 @@ urlpatterns = [
     url(r'^detail/(?P<course_id>\d+)/(?P<homework_id>\d+)/$', views.detail, name='detail'),
     url(r'^pre/(?P<course_id>\d+)/$', views.pre, name='pre'),
     url(r'^pro/(?P<course_id>\d+)/$', views.pro, name='pro'),
+    url(r'^create/$', views.create_page, name='create_page'),
+    url(r'^create/action/$', views.create_action, name='create_action'),
+    url(r'^edit_time/(?P<course_id>\d+)$', views.edit_page, name='time_edit'),
+    url(r'^edit_time/action/$', views.edit_time_action, name='edit_time_action'),
 
 ]

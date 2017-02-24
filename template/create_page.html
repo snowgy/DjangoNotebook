@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="templatemo-content-widget white-bg col-2">
+              <div class="square"></div>
+              <h2 class="templatemo-inline-block">Create a New Course</h2><hr>
+            <form action="{% url 'create_action' %}" method="post" class="form-inline">
+                {% csrf_token %}
+
+                    <label>Name:
+                        <input type="text" name="title" value="{{ course.title }}"/>
+                    </label>
+                     <br/>
+
+                <input type="submit" class="btn btn-info" value="submit">
+
+</form>
+
+
+            </div>
+
+
+
+{% endblock %}
